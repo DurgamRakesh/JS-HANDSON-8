@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-HANDSON-8</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <h1>JAVA SCRIPT HANDSON-8 <br><span class="arr">Array of Objects</span></h1>
+
+    <pre id="obj">
+        let studentRecords = [ {name: 'John', id: 123, marks : 98 },
+                               {name: 'Baba', id: 101, marks : 23 },
+                               {name: 'yaga', id: 200, marks : 45 },
+                               {name: 'Wick', id: 115, marks : 75 } ]
+    </pre>
+    
+    <h2>Question 1 : We are interested in retrieving only the name of the students and all the names should be in caps.
+    </h2>
+    <p>OUTPUT: ['JOHN', 'BABA', 'YAGA', 'WICK']"</p>
+    <pre>
+        var newarr = studentRecords.map((e)=>{
+            let count = ''
+            return count += e.name.toLocaleUpperCase()
+           })
+         console.log(newarr);
+    </pre>
+    <h2>Question 2: Suppose we have the same dataset as above but this time we want to get the details of students who scored more than 50 marks.
+    </h2>
+    <p>OUTPUT: [{name: 'John', id: 123, marks : 98 },{name: 'Wick', id: 115, marks : 75 }]</p>
+    <pre>
+        const marksabove = studentRecords.filter(e => e.marks > 50);
+        console.log(marksabove);
+    </pre>
+    <h2>Question 3: Retrieve the details of students who scored more than 50 marks and have id greater than 120.
+    </h2>
+    <p>OUTPUT: [{name: 'John', id: 123, marks : 98 },{name: 'Wick', id: 115, marks : 75 }]</p>
+    <pre>
+        const idabove = studentRecords.filter(e => e.marks > 50 && e.id > 120);
+        console.log(idabove);
+    </pre>
+    <h2>Question 3: Retrieve the details of students who scored more than 50 marks and have id greater than 120.
+    </h2>
+    <p>OUTPUT: [{name: 'John', id: 123, marks : 98 }]</p>
+    <pre>
+        const idabove = studentRecords.filter(e => e.marks > 50 && e.id > 120);
+        console.log(idabove);
+    </pre>
+    <h2>Question 4: Consider the same scenario we have discussed above, but this time we would like to know the sum total of the marks of the students.
+    </h2>
+    <p>OUTPUT: 241</p>
+    <pre>
+        const sum = studentRecords.reduce((a, b) => a + b.marks,0);
+
+        console.log(sum);
+
+                (or)
+                
+        let summ = 0;
+        for(let i = 0; i < studentRecords.length; i++){
+            summ += studentRecords[i].marks
+        }
+        console.log(summ);
+    </pre>
+    <h2>Question 5: This time we want to get only the names of the students who scored more than 50 marks from the same dataset used above
+    </h2>
+    <p>OUTPUT: ['John', 'Wick']</p>
+    <pre>
+        const sabove = studentRecords.filter(e => e.marks > 50 ).map(i => i.name);
+        console.log(sabove);
+    </pre>
+    <h2>Question 6: This time we are required to print the sum of marks of the students with id > 120.
+    </h2>
+    <p>OUTPUT: 143</p>
+    <pre>
+        const sumof120 = studentRecords.filter(e => e.id > 120).reduce((a,b) => a + b.marks,0)
+        console.log(sumof120);
+    </pre>
+    <h2>Question 7: This time we are required to print the total marks of the students with marks greater than 50 after a grace of 15 marks has been added to those students who scored less than 50.
+    </h2>
+    <p>OUTPUT: 271</p>
+    <pre>
+        const newmarks1 = studentRecords.filter(e =>e.marks < 50  ).map(i => i.marks + 15);
+        const newmarks2 = studentRecords.filter(e =>e.marks > 50  ).map(i => i.marks );
+        const totalmarks = newmarks1.concat(newmarks2).reduce((a,b) => a + b,0);
+
+        console.log(totalmarks);
+    </pre>
+    <h2>Create 6 objects , each object will have name, class, roll no as properties. Store these objects in an array of objects.
+    </h2>
+    <p>OUTPUT: </p>
+    <pre>
+        const studentsdetails = [{name:'Vishnu',class:10,rollno:9},
+                                {name:'Santosh',class:9,rollno:19},
+                                {name:'Anser',class:8,rollno:25},
+                                {name:'Naveen',class:7,rollno:30},
+                                {name:'Sravan',class:6,rollno:16},
+                                {name:'Srikanth',class:5,rollno:40}]
+    </pre>
+    <script src="./script.js"></script>
+</body>
+</html>
