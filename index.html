@@ -92,12 +92,30 @@
     </h2>
     <p>OUTPUT: </p>
     <pre>
-        const studentsdetails = [{name:'Vishnu',class:10,rollno:9},
-                                {name:'Santosh',class:9,rollno:19},
-                                {name:'Anser',class:8,rollno:25},
-                                {name:'Naveen',class:7,rollno:30},
-                                {name:'Sravan',class:6,rollno:16},
-                                {name:'Srikanth',class:5,rollno:40}]
+        let studentsdetails = [];
+
+        function Student(name,classname,rollno){
+                this.stuname = name,
+                this.stuclassname = classname,
+                this.sturollno = rollno
+
+        }
+
+        let student1 = new Student('Vishnu','10th',9)
+        let student2 = new Student('Santosh','9th',10)
+        let student3 = new Student('Anser','8th',25)
+        let student4 = new Student('Naveen','7th',30)
+        let student5 = new Student('Sravan','6th',16)
+        let student6 = new Student('Srikanth','5th',40)
+
+        studentsdetails.push(student1)
+        studentsdetails.push(student2)
+        studentsdetails.push(student3)
+        studentsdetails.push(student4)
+        studentsdetails.push(student5)
+        studentsdetails.push(student6)
+
+        console.log(studentsdetails);
     </pre>
     <script src="./script.js"></script>
 </body>
